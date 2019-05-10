@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+.pull-items .open {
+  color: green;
+}
+
+.pull-items .closed {
+  color: red;
+}
+
+.pull-items .merged {
+  color: blue;
+}

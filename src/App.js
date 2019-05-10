@@ -15,14 +15,17 @@ class App extends React.Component {
 
   handleLogin( name ) {
     //console.log("in handleLogin");
-    //console.log("name: " + name);
+    console.log("name: " + name);
     this.setState(
       {
         loggedIn: true,
         username: name
       }
     );
-  }
+    //console.log( this.state.username );
+    // Fetch the user's data
+    //this.fetchUserData();
+  };
 
 
   render() {
