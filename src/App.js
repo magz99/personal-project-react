@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Login from './components/login.component';
+import EventList from './components/eventlist.component';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor( props ) {
+    super( props );
+    this.state = {
+      loggedIn: false,
+      username: null
+    };
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleLogin( name ) {
+    //console.log("in handleLogin");
+    //console.log("name: " + name);
+    this.setState(
+      {
+        loggedIn: true,
+        username: name
+      }
+    );
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        { this.state.loggedIn ? <EventList username={this.state.username} /> : <Login clickHandler={this.handleLogin} /> }
+      </div>
+    );
+  }
+  
 }
 
 export default App;
