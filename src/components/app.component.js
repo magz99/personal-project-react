@@ -4,7 +4,13 @@ import Login from './login.component';
 import EventList from './eventlist.component';
 
 class AppComponent extends React.Component {
- 
+  /**
+   * 2 Main Child Components: 
+   * Login view in order to input the username
+   * Results (EventList) view to list out the repos for the user
+   * 
+   * Passing in all the props they will need. (Is this right?)
+   */
   render() {
     return (
       <div className="App">

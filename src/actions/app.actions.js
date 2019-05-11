@@ -2,24 +2,23 @@ const EVENTS_URL = 'https://api.github.com/users/{username}/events';
 const REPOS_URL = 'https://api.github.com/users/{username}/repos';
 const PULL_EVENT = 'PullRequestEvent';
 
+/****************************************************** */
 const setUserInfo = payload => ({
     type: "HANDLE_LOGIN",
     payload
 });
 
-// THIS IS THE THUNK
 export const handleLogin = (name) => {
     return function(dispatch, getState) {
         if( name !== '' ) {
             dispatch(setUserInfo(
                 name
              ));
-        }
-       
-        
+        }        
     };
 };
 
+/****************************************************** */
 const setUserName = payload => ({
     type: "HANDLE_INPUT",
     payload
@@ -34,6 +33,7 @@ export const handleInput = (name) => {
     };
 };
 
+/****************************************************** */
 export const enableButton = () => {
     return function(dispatch, getState) {
         dispatch({
@@ -43,7 +43,7 @@ export const enableButton = () => {
     };
 };
 
-
+/****************************************************** */
 const setPullData = payload => ({
     type: "SET_PULL_DATA",
     payload
@@ -68,7 +68,7 @@ export const fetchUserPulls = () => {
     }
 };
 
-
+/****************************************************** */
 const setForkData = payload => ({
     type: "SET_FORK_DATA",
     payload

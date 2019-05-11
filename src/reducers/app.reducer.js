@@ -1,3 +1,4 @@
+// Default state, all vars are used by different components
 const defaultState = {
     loggedIn: false,
     username: '',

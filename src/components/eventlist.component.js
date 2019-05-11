@@ -4,11 +4,17 @@ import PullListItem from './pulllistitem.component';
 
 class EventList extends React.Component {
     
+    // Once this Component mounts, we want to fetch the data
     componentDidMount() {
         this.props.fetchUserPulls();
         this.props.fetchUserRepos();
     };
     
+    /**
+     * This uses 2 other child components:
+     * * listing out repository items
+     * * listing out pull request items
+     */
     render() {
         return(<>
                 <h1>{this.props.username}'s Information</h1>

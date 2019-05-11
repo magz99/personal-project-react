@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Login extends React.Component {
-    // Fetch the user's data
+    // Enable the button only once the component mounted
     componentDidMount() {
         this.props.enableButton();        
     };
