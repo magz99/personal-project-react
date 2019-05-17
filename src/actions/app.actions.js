@@ -54,7 +54,7 @@ export const fetchUserPulls = () => {
         let userUrl = EVENTS_URL;
         const state = getState();
 
-        userUrl = userUrl.replace('{username}', state.theReducer.username );
+        userUrl = userUrl.replace('{username}', state.formReducer.username );
         
         fetch(userUrl)
         .then( response => response.json() )
@@ -78,7 +78,7 @@ export const fetchUserRepos = () => {
     return function(dispatch, getState) {
         let reposUrl = REPOS_URL;
         const state = getState();
-        reposUrl = reposUrl.replace('{username}', state.theReducer.username );
+        reposUrl = reposUrl.replace('{username}', state.formReducer.username );
         
         fetch(reposUrl)
         .then( response => response.json() )

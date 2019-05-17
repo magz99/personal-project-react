@@ -1,14 +1,9 @@
-// Default state, all vars are used by different components
-const defaultState = {
+const formReducer = ( state = {
     loggedIn: false,
     username: '',
     uName: '',
     btnDisabled: true,
-    forkData: [],
-    pullData: [],
-  };
-
-const appReducer = (state=defaultState, action) => {
+}, action ) => {
     switch (action.type) {
         case "HANDLE_LOGIN":
             return {
@@ -26,6 +21,16 @@ const appReducer = (state=defaultState, action) => {
                 ...state,
                 btnDisabled: false,
             };
+        default:
+            return state;
+    }
+};
+
+const dataReducer = (state= {
+    forkData: [],
+    pullData: [],
+}, action) => {
+    switch (action.type) {        
         case "SET_FORK_DATA":
             return {
                 ...state,
@@ -41,4 +46,6 @@ const appReducer = (state=defaultState, action) => {
     }
   };
   
-export default appReducer;
+//export dataReducer;
+
+export {dataReducer, formReducer};

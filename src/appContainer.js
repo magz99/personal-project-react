@@ -5,14 +5,19 @@ import AppComponent from "./components/app.component";
 
 function mapStateToProps(state) {
   return {
-    loggedIn: state.theReducer.loggedIn,
-    username: state.theReducer.username,
-    uName: state.theReducer.uName,
-    btnDisabled: state.theReducer.btnDisabled,
-    forkData: state.theReducer.forkData,
-    pullData: state.theReducer.pullData,
+    formProps: state.formReducer,
+    dataProps: state.dataReducer,
   };
 }
+
+/*
+loggedIn: state.formReducer.loggedIn,
+    username: state.formReducer.username,
+    uName: state.formReducer.uName,
+    btnDisabled: state.formReducer.btnDisabled,
+    forkData: state.dataReducer.forkData,
+    pullData: state.dataReducer.pullData,
+    */
 
 const mapDispatchToProps = {
     handleLogin,

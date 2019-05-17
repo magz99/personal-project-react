@@ -14,11 +14,11 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="App">
-        { this.props.loggedIn ? 
+        { this.props.formProps.loggedIn ? 
         <EventList  
-          forkData={this.props.forkData} 
-          pullData={this.props.pullData}
-          username={this.props.username} 
+          forkData={this.props.dataProps.forkData} 
+          pullData={this.props.dataProps.pullData}
+          username={this.props.formProps.username} 
           fetchUserPulls={this.props.fetchUserPulls}
           fetchUserRepos={this.props.fetchUserRepos}
         /> : 
@@ -26,8 +26,8 @@ class AppComponent extends React.Component {
           handleInput={this.props.handleInput} 
           enableButton={this.props.enableButton} 
           clickHandler={this.props.handleLogin} 
-          btnDisabled={this.props.btnDisabled}
-          uName={this.props.uName}
+          btnDisabled={this.props.formProps.btnDisabled}
+          uName={this.props.formProps.uName}
         /> }
       </div>
     );
